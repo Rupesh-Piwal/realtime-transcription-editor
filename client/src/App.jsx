@@ -1,11 +1,12 @@
 import "./App.css";
-import RecorderPanel from "./components/record-panel";
-import TranscriptEditor from "./components/transcription-editor";
+import AudioRecorder from "./components/audio-recorder";
+
+
 
 function App() {
   return (
-    <div className="app-container">
-      
+    <div className="app-container h-full w-full bg-[#2B2C2D] text-white">
+      <AudioRecorder/>
     </div>
   );
 }

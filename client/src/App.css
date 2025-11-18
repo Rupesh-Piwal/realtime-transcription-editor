@@ -5,6 +5,34 @@
   text-align: center;
 }
 
+body {
+  background-color: #2b2c2d;
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: red;
+  display: inline-block;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+}
+
+
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;

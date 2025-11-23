@@ -1,16 +1,38 @@
-# React + Vite
+# client/README.md
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Real-Time Transcription Client
 
-Currently, two official plugins are available:
+This is the frontend for the real-time transcription editor, built with React, TypeScript, and Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+-   **Microphone Access:** Uses `navigator.mediaDevices.getUserMedia` to access the user's microphone.
+-   **Audio Recording:** Uses `MediaRecorder` to capture and encode audio into `webm/opus` format.
+-   **Live Streaming:** Streams audio chunks to the backend via a native WebSocket connection.
+-   **Rich Text Editor:** Uses [Slate.js](https://www.slatejs.org/) to display the live transcript, allowing for user edits.
+-   **Playback Synchronization:** After recording, allows playback of the audio with real-time highlighting of the spoken words.
+-   **Click-to-Seek:** Clicking on a word in the transcript seeks the audio playback to that word's timestamp.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup and Development
 
-## Expanding the ESLint configuration
+1.  **Install dependencies:**
+    Make sure you have Node.js and npm installed.
+    ```bash
+    npm install
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    This will start the Vite development server, usually on `http://localhost:5173`. The app will be available in your browser at this address.
+
+    The development server is configured to proxy API (`/api/*`) and WebSocket (`/ws/*`) requests to the backend server running on `http://127.0.0.1:5000`. Ensure the backend server is running for the application to function correctly.
+
+## Building for Production
+
+To create a production build of the application:
+```bash
+npm run build
+```
+This command will type-check the code and then bundle it into the `dist` directory. You can then serve the contents of the `dist` directory with any static file server.

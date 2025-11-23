@@ -1,0 +1,21 @@
+WebSocket connection to 'ws://127.0.0.1:5000/ws/transcription' failed: WebSocket is closed before the connection is established.
+(anonymous) @ useTranscriptionSocket.ts?t=1763919947963:62
+(anonymous) @ useTranscriptionSocket.ts?t=1763919947963:70
+safelyCallDestroy @ chunk-PJEEZAML.js?v=c2fc2326:16748
+commitHookEffectListUnmount @ chunk-PJEEZAML.js?v=c2fc2326:16875
+commitPassiveUnmountOnFiber @ chunk-PJEEZAML.js?v=c2fc2326:18232
+commitPassiveUnmountEffects_complete @ chunk-PJEEZAML.js?v=c2fc2326:18213
+commitPassiveUnmountEffects_begin @ chunk-PJEEZAML.js?v=c2fc2326:18204
+commitPassiveUnmountEffects @ chunk-PJEEZAML.js?v=c2fc2326:18169
+flushPassiveEffectsImpl @ chunk-PJEEZAML.js?v=c2fc2326:19489
+flushPassiveEffects @ chunk-PJEEZAML.js?v=c2fc2326:19447
+performSyncWorkOnRoot @ chunk-PJEEZAML.js?v=c2fc2326:18868
+flushSyncCallbacks @ chunk-PJEEZAML.js?v=c2fc2326:9119
+commitRootImpl @ chunk-PJEEZAML.js?v=c2fc2326:19432
+commitRoot @ chunk-PJEEZAML.js?v=c2fc2326:19277
+finishConcurrentRender @ chunk-PJEEZAML.js?v=c2fc2326:18805
+performConcurrentWorkOnRoot @ chunk-PJEEZAML.js?v=c2fc2326:18718
+workLoop @ chunk-PJEEZAML.js?v=c2fc2326:197
+flushWork @ chunk-PJEEZAML.js?v=c2fc2326:176
+performWorkUntilDeadline @ chunk-PJEEZAML.js?v=c2fc2326:384
+installHook.js:1 WebSocket error: 

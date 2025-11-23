@@ -1,22 +1,23 @@
-import os
+# server/db.py
 from pymongo import MongoClient
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
+from flask import current_app, g
 
 def get_db():
     """
-    Returns a connection to the MongoDB database.
+    Connect to the application's configured database.
+    If the connection does not exist, it is created and stored in the application context.
     """
-    try:
-        mongo_uri = os.environ.get("MONGO_URI")
-        if not mongo_uri:
-            raise ValueError("MONGO_URI environment variable not set")
-            
-        client = MongoClient(mongo_uri)
-        db = client.get_default_database() # Or specify a database name like client['your_db_name']
-        return db
-    except Exception as e:
-        print(f"Error connecting to MongoDB: {e}")
-        return None
+    if 'db' not in g:
+        client = MongoClient(current_app.config['MONGO_URI'])
+        g.db = client.get_database()
+    return g.db
+
+def close_db(e=None):
+    """
+    If a connection was created, close it.
+    """
+    db = g.pop('db', None)
+    if db is not None:
+        # Pymongo's client object manages connections, so we don't strictly need to close it.
+        # This function is here for symmetry with Flask patterns.
+        pass

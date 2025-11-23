@@ -1,0 +1,8 @@
+# server/requirements.txt
+Flask
+Flask-Cors
+Flask-Sock
+pymongo
+python-dotenv
+deepgram-sdk
+websockets
